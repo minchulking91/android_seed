@@ -1,0 +1,44 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion BuildVersions.compile_sdk
+    defaultConfig {
+        applicationId "kr.co.sleeptime.androidseed"
+        minSdkVersion BuildVersions.min_sdk
+        targetSdkVersion BuildVersions.target_sdk
+        versionCode BuildVersions.version_code
+        versionName BuildVersions.version_name
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            applicationIdSuffix = ".dev"
+            versionNameSuffix = "-dv"
+        }
+    }
+    dataBinding.enabled = true
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation Deps.kotlin_stdlib
+    implementation Deps.android_appcompat
+    implementation Deps.constraint_layout
+    implementation Deps.rxkotlin
+    implementation Deps.rxandroid
+    implementation Deps.lifecycle_extensions
+    implementation Deps.timber
+    implementation Deps.three_ten_abp
+
+    testImplementation Deps.junit
+    androidTestImplementation Deps.test_runner
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
+}
