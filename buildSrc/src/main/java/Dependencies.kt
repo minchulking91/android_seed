@@ -34,6 +34,7 @@ object Versions {
 
     const val androidx = "1.0.0-rc01"
     const val espresso = "3.1.0-alpha4"
+    const val koin = "1.0.0-beta-7"
 }
 
 object Deps {
@@ -91,6 +92,11 @@ object Deps {
     const val anko_design = "org.jetbrains.anko:anko-design:${Versions.anko}"
     const val anko_appcompat_v7 = "org.jetbrains.anko:anko-appcompat-v7:${Versions.anko}"
     const val anko_recyclerview = "org.jetbrains.anko:anko-recyclerview-v7:${Versions.anko}"
+
+    //di
+    const val koin_architecture = "org.koin:koin-androidx-viewmodel:${Versions.koin}"
+    const val koin_android = "org.koin:koin-android:${Versions.koin}"
+    const val koin_android_scope = "org.koin:koin-androidx-scope:${Versions.koin}"
     //forTest
     const val junit = "junit:junit:${Versions.junit}"
     const val mockito_kotlin = "com.nhaarman:mocjkito-kotlin:${Versions.mockito_kotlin}"

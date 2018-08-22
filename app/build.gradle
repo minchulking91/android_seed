@@ -31,6 +31,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation Deps.kotlin_stdlib
     implementation Deps.android_appcompat
+    implementation Deps.android_design
     implementation Deps.constraint_layout
     implementation Deps.rxkotlin
     implementation Deps.rxandroid
@@ -38,7 +39,15 @@ dependencies {
     implementation Deps.timber
     implementation Deps.three_ten_abp
 
+    implementation Deps.room_runtime
+    implementation Deps.room_rxjava
+    kapt Deps.room_compiler
+
+    implementation Deps.koin_architecture
+    implementation Deps.koin_android
+    implementation Deps.koin_android_scope
+
     testImplementation Deps.junit
     androidTestImplementation Deps.test_runner
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
+    androidTestImplementation Deps.espresso
 }
