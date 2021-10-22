@@ -15,7 +15,6 @@ class MainFragment : Fragment(R.layout.fragment_main),
     ViewBinding<FragmentMainBinding>,
     InsetsCallbackBinding {
     override val bindingClass: Class<FragmentMainBinding> = FragmentMainBinding::class.java
-    override val requireBinding: FragmentMainBinding get() = binding!!
     override var binding: FragmentMainBinding? = null
 
     private val insetsCallback = RootViewDeferringInsetsCallback(
@@ -28,13 +27,6 @@ class MainFragment : Fragment(R.layout.fragment_main),
     override val onApplyWindowInsetsListener: OnApplyWindowInsetsListener = insetsCallback
     override val defaultLightTheme: Boolean = true
 
-    override fun injectBinding(binding: Any?) {
-        this.binding = binding as? FragmentMainBinding
-    }
-
-    override fun clearBinding() {
-        binding = null
-    }
 
     override fun onViewStateRestored(savedInstanceState: Bundle?) {
         super.onViewStateRestored(savedInstanceState)
